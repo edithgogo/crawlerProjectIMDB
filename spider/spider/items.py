@@ -6,7 +6,14 @@
 import scrapy
 
 
-class SpiderItem(scrapy.Item):
+class ImdbItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    pass
+    rating_value = scrapy.Field()
+    rating_count = scrapy.Field()
+    title = scrapy.Field()
+    year = scrapy.Field()
+    writer = scrapy.Field()
+    director = scrapy.Field()
+    stars = scrapy.Field()
+

@@ -62,9 +62,10 @@ DOWNLOAD_DELAY = 3
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'spider.pipelines.SpiderPipeline': 300,
-#}
+ITEM_PIPELINES = {
+    'spider.pipelines.SpiderPipeline': 300,
+    'spider.pipelines.ImdbPipeline': 400
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -77,7 +78,7 @@ DOWNLOAD_DELAY = 3
 # each remote server
 #AUTOTHROTTLE_TARGET_CONCURRENCY = 1.0
 # Enable showing throttling stats for every response received:
-#AUTOTHROTTLE_DEBUG = False
+# AUTOTHROTTLE_DEBUG = False
 
 # Enable and configure HTTP caching (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings
@@ -88,3 +89,9 @@ HTTPCACHE_IGNORE_HTTP_CODES = []
 HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 DOWNLOAD_FAIL_ON_DATALOSS = False
+
+
+MONGO_DATABASE = {
+    'items' : 'alpha',
+}
+MONGO_URI = "mongodb://127.0.0.1:27017"
